@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Phone, Bot, Ticket, Users, BarChart3, MessageSquare } from 'lucide-react';
+import Image from 'next/image';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -47,7 +48,7 @@ export default function SolutionsSpotlight() {
       title: 'Contact Center Solutions',
       description: 'Advanced contact center platforms with omnichannel support, real-time analytics, and intelligent routing for enhanced customer experience.',
       features: ['Omnichannel Support', 'Real-time Analytics', 'Intelligent Routing', 'Quality Monitoring'],
-      image: '/api/placeholder/600/400',
+      image: 'images/ContactCenterSolutions.jpg',
       gradient: 'from-[#0054A6] to-[#E30613]'
     },
     {
@@ -55,7 +56,7 @@ export default function SolutionsSpotlight() {
       title: 'Dialer with CRM',
       description: 'Integrated dialer systems with comprehensive CRM functionality, advanced reporting, and seamless workflow automation.',
       features: ['Auto Dialing', 'CRM Integration', 'Lead Management', 'Performance Analytics'],
-      image: '/api/placeholder/600/400',
+      image: 'images/DialerwithCRM.jpg',
       gradient: 'from-[#E30613] to-[#0054A6]'
     },
     {
@@ -63,7 +64,7 @@ export default function SolutionsSpotlight() {
       title: 'AI Chatbot',
       description: 'Intelligent conversational AI powered by machine learning, providing 24/7 customer support with natural language processing.',
       features: ['Natural Language Processing', '24/7 Availability', 'Multi-language Support', 'Learning Capabilities'],
-      image: '/api/placeholder/600/400',
+      image: 'images/AIChatbot.jpg',
       gradient: 'from-purple-600 to-[#0054A6]'
     },
     {
@@ -71,7 +72,7 @@ export default function SolutionsSpotlight() {
       title: 'Ticketing System',
       description: 'Comprehensive support ticket management with automated workflows, priority handling, and detailed reporting capabilities.',
       features: ['Automated Workflows', 'Priority Management', 'SLA Tracking', 'Detailed Reporting'],
-      image: '/api/placeholder/600/400',
+      image: 'images/TicketingSystem.jpg',
       gradient: 'from-[#0054A6] to-purple-600'
     }
   ];
@@ -152,9 +153,16 @@ export default function SolutionsSpotlight() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl p-8 shadow-2xl">
-                  <div className="aspect-video bg-white rounded-2xl shadow-inner overflow-hidden">
-                    <div className={`h-full bg-gradient-to-br ${solution.gradient} opacity-10 flex items-center justify-center`}>
-                      <solution.icon className="h-24 w-24 text-gray-400" />
+                  <div className="aspect-video bg-gray-900 rounded-2xl shadow-inner overflow-hidden relative">
+                    <Image
+                      src={solution.image}
+                      alt={solution.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} mix-blend-multiply`}></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <solution.icon className="h-24 w-24 text-white opacity-75 drop-shadow-lg" />
                     </div>
                   </div>
                   

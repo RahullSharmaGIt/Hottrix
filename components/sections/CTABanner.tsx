@@ -81,7 +81,7 @@ export default function CTABanner() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-[#0054A6] px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                className="border-white text-black hover:bg-white hover:text-[#0054A6] px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Get Quote
@@ -98,7 +98,7 @@ export default function CTABanner() {
           >
             <div className="flex items-center space-x-2">
               <Phone className="h-5 w-5" />
-              <span>+91 9876543210</span>
+              <span>+91 84482-92236</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-5 w-5" />

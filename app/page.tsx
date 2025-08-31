@@ -46,7 +46,6 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden">
-      <Navigation />
       
       <section id="home">
         <Hero />
@@ -78,7 +77,7 @@ export default function Home() {
         <Contact />
       </section>
       
-      <Footer />
+      
     </main>
   );
 }

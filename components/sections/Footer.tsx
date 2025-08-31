@@ -13,13 +13,12 @@ export default function Footer() {
       'AMC Services',
       'Contact Center Solutions'
     ],
-    company: [
-      'About Us',
-      'Our Team',
-      'Careers',
-      'News & Updates',
-      'Privacy Policy'
-    ],
+     company: [
+    { name: 'About Us', url: '/about' },
+    { name: 'Services', url: '/team' },
+    { name: 'Testimonials', url: '/Testimonials' },
+    { name: 'Contact Us', url: '/contact' },
+  ],
     support: [
       'Help Center',
       'Documentation',
@@ -27,6 +26,8 @@ export default function Footer() {
       'Contact Support',
       'System Status'
     ]
+   
+
   };
 
   const socialLinks = [
@@ -61,7 +62,7 @@ export default function Footer() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-[#E30613]" />
-                    <span className="text-gray-300">+91 9876543210</span>
+                    <span className="text-gray-300">+91 84482-92236</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-[#0054A6]" />
@@ -69,7 +70,7 @@ export default function Footer() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-[#E30613]" />
-                    <span className="text-gray-300">Gurugram, Haryana</span>
+                    <span className="text-gray-300">B-230, Logix Technova Business Park, Sector 132, NOIDA-201301</span>
                   </div>
                 </div>
               </motion.div>
@@ -95,23 +96,27 @@ export default function Footer() {
             </motion.div>
 
             {/* Company */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
-            >
-              <h4 className="text-lg font-bold text-white">Company</h4>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-[#0054A6] transition-colors duration-300">
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+           <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="space-y-6"
+>
+  <h4 className="text-lg font-bold text-white">Company</h4>
+  <ul className="space-y-3">
+    {footerLinks.company.map((link, index) => (
+      <li key={index}>
+        <a
+          href={link.url}
+          className="text-gray-300 hover:text-[#0054A6] transition-colors duration-300"
+        >
+          {link.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</motion.div>
+
 
             {/* Support */}
             <motion.div

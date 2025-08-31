@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import React from "react";
 import {
   Globe,
@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+
 const usps = [
   {
     icon: Globe,
@@ -18,7 +19,7 @@ const usps = [
     description: "Tailored IT and telecom solutions that adapt to unique client requirements.",
     stats: "Client-first Approach",
     className: "col-span-3 lg:col-span-1",
-    video: "Services.mp4",
+    bg: "/images/CustomizedServices.jpg",
   },
   {
     icon: Users,
@@ -26,8 +27,7 @@ const usps = [
     description: "Extensive industry experience with certified professionals.",
     stats: "50+ Experts",
     className: "col-span-3 lg:col-span-1",
-    video: "Team.mp4",
-
+    bg: "/images/ExpertTeam.jpg",
   },
   {
     icon: Clock,
@@ -35,8 +35,7 @@ const usps = [
     description: "Round-the-clock customer service for immediate assistance.",
     stats: "<2 Min Response",
     className: "col-span-3 lg:col-span-1",
-    video: "support.mp4",
-
+    bg: "/images/247Support.jpg",
   },
   {
     icon: CheckCircle,
@@ -44,24 +43,23 @@ const usps = [
     description: "Successful project implementations across diverse industries.",
     stats: "98.5% Success Rate",
     className: "col-span-3 lg:col-span-2",
-    video: "provenRecord.mp4",
-
+    bg: "/images/ProvenTrackRecord.jpg",
   },
-    {
+  {
     icon: DollarSign,
     title: "Competitive Pricing",
     description: "Flexible leasing options with cost-effective strategies.",
     stats: "30% Savings",
-      className: "col-span-3 lg:col-span-1",
-    video: "Services.mp4",
-    
+    className: "col-span-3 lg:col-span-1",
+    bg: "/images/CompetitivePricing.jpg",
   },
-    {
+  {
     icon: Globe,
     title: "Rapid Deployment",
     description: "Quick rollout of IT infrastructure and essential services.",
     stats: "Faster Go-live",
     className: "col-span-3 lg:col-span-1",
+    bg: "/images/RapidDeployment.jpg",
   },
   {
     icon: Users,
@@ -69,10 +67,9 @@ const usps = [
     description: "Building trust and lasting partnerships with clients worldwide.",
     stats: "500+ Clients",
     className: "col-span-3 lg:col-span-2",
+    bg: "/images/LongtermRelationships.jpg",
   },
-  
 ];
-
 
 export default function WhyChooseUsBento() {
   return (
@@ -101,16 +98,20 @@ export default function WhyChooseUsBento() {
               className={usp.className}
               cta={usp.stats}
               background={
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 h-full w-full object-cover rounded-xl opacity-30 group-hover:opacity-60 transition duration-500"
-                >
-                  <source src={`/videos/${usp.video}`} type="video/mp4" />
-                </video>
+                <>
+                  <Image
+                    src={usp.bg}
+                    alt={usp.title}
+                    fill
+                    className="object-cover opacity-30"
+                  />
+                  {/* Text readability overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                </>
               }
+              style={{
+                textShadow: '1px 1px 1px rgba(0, 0, 0, 0.4), 0 0 2px rgba(0, 0, 0, 0.1)'
+              }}
             />
           ))}
         </BentoGrid>
