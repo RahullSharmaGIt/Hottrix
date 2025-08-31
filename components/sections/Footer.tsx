@@ -1,40 +1,40 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 
 export default function Footer() {
   const footerLinks = {
     services: [
-      'IT Hardware & Software',
-      'CCTV Surveillance', 
-      'Biometric Systems',
-      'AMC Services',
-      'Contact Center Solutions'
+      "IT Hardware & Software",
+      "CCTV Surveillance",
+      "Biometric Systems",
+      "AMC Services",
+      "Contact Center Solutions",
     ],
-     company: [
-    { name: 'About Us', url: '/about' },
-    { name: 'Services', url: '/team' },
-    { name: 'Testimonials', url: '/Testimonials' },
-    { name: 'Contact Us', url: '/contact' },
-  ],
-    support: [
-      'Help Center',
-      'Documentation',
-      'Community',
-      'Contact Support',
-      'System Status'
-    ]
-   
-
+    company: [
+      { name: "About Us", url: "/about" },
+      { name: "Services", url: "/team" },
+      { name: "Testimonials", url: "/Testimonials" },
+      { name: "Contact Us", url: "/contact" },
+    ],
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', color: 'hover:text-blue-500' },
-    { icon: Twitter, href: '#', color: 'hover:text-blue-400' },
-    { icon: Facebook, href: '#', color: 'hover:text-blue-600' },
-    { icon: Instagram, href: '#', color: 'hover:text-pink-500' }
+    { icon: Linkedin, href: "#", color: "hover:text-blue-500" },
+    { icon: Twitter, href: "#", color: "hover:text-blue-400" },
+    { icon: Facebook, href: "#", color: "hover:text-blue-600" },
+    { icon: Instagram, href: "#", color: "hover:text-pink-500" },
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="container-custom">
         {/* Main Footer */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 gap-x-16">
             {/* Company Info */}
             <div className="lg:col-span-2 space-y-6">
               <motion.div
@@ -50,14 +50,22 @@ export default function Footer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="text-2xl font-bold mb-4">
-                  <span className="gradient-text">Hottrix</span> IT Services
-                </h3>
+        
+                {
+                  <Image
+                    alt="Hottrix Logo"
+                    src = "images/hottrix.png"
+                    className=""
+                    width={200}
+                    height={50}
+                  />
+                }
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  Innovating IT and telecom solutions for a secure future. We empower businesses 
-                  with cutting-edge technology and comprehensive support services.
+                  Innovating IT and telecom solutions for a secure future. We
+                  empower businesses with cutting-edge technology and
+                  comprehensive support services.
                 </p>
-                
+
                 {/* Contact Info */}
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
@@ -70,7 +78,10 @@ export default function Footer() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-[#E30613]" />
-                    <span className="text-gray-300">B-230, Logix Technova Business Park, Sector 132, NOIDA-201301</span>
+                    <span className="text-gray-300">
+                      B-230, Logix Technova Business Park, Sector 132,
+                      NOIDA-201301
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -87,7 +98,10 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.services.map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-[#E30613] transition-colors duration-300">
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-[#E30613] transition-colors duration-300"
+                    >
                       {link}
                     </a>
                   </li>
@@ -96,46 +110,27 @@ export default function Footer() {
             </motion.div>
 
             {/* Company */}
-           <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="space-y-6"
->
-  <h4 className="text-lg font-bold text-white">Company</h4>
-  <ul className="space-y-3">
-    {footerLinks.company.map((link, index) => (
-      <li key={index}>
-        <a
-          href={link.url}
-          className="text-gray-300 hover:text-[#0054A6] transition-colors duration-300"
-        >
-          {link.name}
-        </a>
-      </li>
-    ))}
-  </ul>
-</motion.div>
-
-
-            {/* Support */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
-              <h4 className="text-lg font-bold text-white">Support</h4>
+              <h4 className="text-lg font-bold text-white">Company</h4>
               <ul className="space-y-3">
-                {footerLinks.support.map((link, index) => (
+                {footerLinks.company.map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-[#E30613] transition-colors duration-300">
-                      {link}
+                    <a
+                      href={link.url}
+                      className="text-gray-300 hover:text-[#0054A6] transition-colors duration-300"
+                    >
+                      {link.name}
                     </a>
                   </li>
                 ))}
               </ul>
             </motion.div>
+
           </div>
         </div>
 

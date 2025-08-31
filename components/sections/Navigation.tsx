@@ -91,7 +91,7 @@ export default function Navigation() {
                 className={`${
                   scrolled
                     ? "border-[#0054A6] text-[#0054A6] hover:bg-[#0054A6]"
-                    : "border-white text-white hover:bg-white hover:text-[#0054A6]"
+                    : "border-white text-black hover:bg-black hover:text-[#0054A6]"
                 } hover:text-white transition-all duration-300`}
               >
                 <Phone className="mr-2 h-4 w-4" />
