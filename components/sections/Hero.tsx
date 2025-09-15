@@ -49,7 +49,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden mt-20">
       {/* Animated Background */}
       <div 
         ref={backgroundRef}

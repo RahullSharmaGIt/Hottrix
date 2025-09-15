@@ -192,10 +192,12 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-          ><SparklesText>
-            <AnimatedGradientText className="text-6xl md:text-7xl font-bold mb-12">Our Services
+          >
+            <SparklesText>
+              <AnimatedGradientText className="text-6xl md:text-7xl font-bold mb-12">
+                Our Services
               </AnimatedGradientText>
-              </SparklesText>
+            </SparklesText>
           </motion.div>
 
           <motion.p
@@ -282,8 +284,6 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
                         >
                           <service.icon className="h-8 w-8 text-white" />
                         </motion.div>
-
-                       
 
                         {service.isSpecial && (
                           <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0">
@@ -549,13 +549,14 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
                 >
                   Get Free Consultation
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10 font-semibold"
+                <a
+                  href="/HOTTRIX_CAPABILITY.pdf" // Replace with the actual path to your PDF file
+                  target="_blank" // Optional: Opens the PDF in a new tab
+                  rel="noopener noreferrer" // Recommended for security when using target="_blank"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-white text-black hover:bg-white/10 font-semibold"
                 >
                   View Portfolio
-                </Button>
+                </a>
               </div>
             </div>
           </div>

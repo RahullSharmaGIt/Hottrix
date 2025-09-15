@@ -20,6 +20,7 @@ const usps = [
     stats: "Client-first Approach",
     className: "col-span-3 lg:col-span-1",
     bg: "/images/CustomizedServices.jpg",
+     priority: true, 
   },
   {
     icon: Users,
@@ -28,6 +29,7 @@ const usps = [
     stats: "50+ Experts",
     className: "col-span-3 lg:col-span-1",
     bg: "/images/ExpertTeam.jpg",
+     priority: true, 
   },
   {
     icon: Clock,
@@ -36,6 +38,7 @@ const usps = [
     stats: "<2 Min Response",
     className: "col-span-3 lg:col-span-1",
     bg: "/images/247Support.jpg",
+     priority: true, 
   },
   {
     icon: CheckCircle,
@@ -90,7 +93,6 @@ export default function WhyChooseUsBento() {
         <BentoGrid>
           {usps.map((usp, idx) => (
             <BentoCard
-              href="#"
               key={idx}
               Icon={usp.icon}
               name={usp.title}
@@ -104,6 +106,7 @@ export default function WhyChooseUsBento() {
                     alt={usp.title}
                     fill
                     className="object-cover opacity-30"
+                    priority={usp.priority || false} 
                   />
                   {/* Text readability overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>

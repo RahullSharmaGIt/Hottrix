@@ -15,10 +15,9 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   background: ReactNode;
   Icon: React.ElementType;
   description: string;
-  href: string;
   cta: string;
 }
-
+// This is a functional component that accepts the BentoGridProps.
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
   return (
     <div
@@ -39,7 +38,6 @@ const BentoCard = ({
   background,
   Icon,
   description,
-  href,
   cta,
   ...props
 }: BentoCardProps) => (
@@ -76,10 +74,7 @@ const BentoCard = ({
           size="sm"
           className="pointer-events-auto p-0"
         >
-          <a href={href}>
-            {cta}
-            <ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" />
-          </a>
+     
         </Button>
       </div>
     </div>
@@ -95,10 +90,7 @@ const BentoCard = ({
         size="sm"
         className="pointer-events-auto p-0"
       >
-        <a href={href}>
-          {cta}
-          <ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" />
-        </a>
+     
       </Button>
     </div>
 
